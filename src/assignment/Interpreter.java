@@ -16,7 +16,7 @@ public class Interpreter implements CritterInterpreter {
 
 	public void executeCritter(Critter c) {
 	
-	// obviously, your code should do something
+	
 	
 	return;
 	
@@ -25,7 +25,10 @@ public class Interpreter implements CritterInterpreter {
 	public CritterSpecies loadSpecies(String filename) throws IOException {
 	// obviously, your code should do something
 		
-		Scanner scan = new Scanner(new FileReader(filename));
+		//System.out.println("Enter in file pls");
+		//Scanner user = new Scanner(System.in);
+		//String fileName = user.nextLine();
+		Scanner scan = new Scanner(new FileReader("./species/" + filename));
 		String commandString = "";
 		String name = "";
 		
