@@ -1,5 +1,6 @@
 package assignment;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
@@ -13,8 +14,12 @@ public class testLoadSpecies {
 		System.out.println("Enter in file pls");
 		Scanner user = new Scanner(System.in);
 		String fileName = user.nextLine();
+<<<<<<< HEAD
+		Scanner scan = new Scanner(new FileReader("\\species\\" + fileName));
+=======
 		
 		Scanner scan = new Scanner(new FileReader("./species/" + fileName));
+>>>>>>> 0800eb6d375cf16c7de33787f879a25532018a5d
 		String commandString = "";
 		String name = "";
 		
