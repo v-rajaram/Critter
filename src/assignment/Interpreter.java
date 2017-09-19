@@ -64,7 +64,7 @@ commandString += scan.nextLine() + "%"; //Signifies Command endline
 
 String [] commands = commandString.split("%");
 
-
+// Can you see this?
 
 
 System.out.println(commands);
