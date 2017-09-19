@@ -1,0 +1,34 @@
+package assignment;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class testLoadSpecies {
+	
+	
+	public static void main (String args[]) throws FileNotFoundException {
+		Scanner user = new Scanner(System.in);
+		String fileName = user.nextLine();
+		Scanner scan = new Scanner(new FileReader(fileName));
+		String commandString = "";
+		String name = "";
+		
+		if(scan.hasNextLine() && !(scan.nextLine().charAt(0) == '\n')) {
+			name = scan.nextLine();
+		}
+		
+		while(scan.hasNextLine()) {
+			commandString += scan.nextLine() + "%"; //Signifies Command endline
+		}
+		
+		String [] commands = commandString.split("%");
+		// Can you see this?
+		System.out.println(commands);
+		
+		
+	}
+	
+
+}
+
