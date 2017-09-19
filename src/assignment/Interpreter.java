@@ -39,38 +39,24 @@ return;
 
 
 public CritterSpecies loadSpecies(String filename) throws IOException {
-
 // obviously, your code should do something
-
-Scanner scan = new Scanner(new FileReader(filename));
-
-String commandString = "";
-
-String name = "";
-
-if(scan.hasNextLine() && !(scan.nextLine().charAt(0) == '\n')) {
-
-name = scan.nextLine();
-
-}
-
-
-while(scan.hasNextLine()) {
-
-commandString += scan.nextLine() + "%"; //Signifies Command endline
-
-}
-
-
-String [] commands = commandString.split("%");
-
-// Can you see this?
-
-
-System.out.println(commands);
-
-
-return null;
+	
+	Scanner scan = new Scanner(new FileReader(filename));
+	String commandString = "";
+	String name = "";
+	
+	if(scan.hasNextLine() && !(scan.nextLine().charAt(0) == '\n')) {
+		name = scan.nextLine();
+	}
+	
+	while(scan.hasNextLine()) {
+		commandString += scan.nextLine() + "%"; //Signifies Command endline
+	}
+	
+	String [] commands = commandString.split("%");
+	// Can you see this?
+	System.out.println(commands);
+	return null;
 
 }
 
