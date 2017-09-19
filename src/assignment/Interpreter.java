@@ -17,7 +17,6 @@ public class Interpreter implements CritterInterpreter {
 	}
 
 	public CritterSpecies loadSpecies(String filename) throws IOException {
-		// obviously, your code should do something
 		return null;
 	}
 }
