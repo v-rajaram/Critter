@@ -14,7 +14,10 @@ public class testLoadSpecies {
 		System.out.println("Enter in file pls");
 		Scanner user = new Scanner(System.in);
 		String fileName = user.nextLine();
+		
 		Scanner scan = new Scanner(new FileReader("./species/" + fileName));
+
+
 		String commandString = "";
 		String name = "";
 		
