@@ -2,6 +2,8 @@ package assignment;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
@@ -29,20 +31,23 @@ public class Interpreter implements CritterInterpreter {
 		//Scanner user = new Scanner(System.in);
 		//String fileName = user.nextLine();
 		Scanner scan = new Scanner(new FileReader("./species/" + filename));
-		String commandString = "";
 		String name = "";
+		LinkedList <String> commands = new LinkedList <String>();
 		
 		if(scan.hasNextLine() && !(scan.nextLine().charAt(0) == '\n')) {
 			name = scan.nextLine();
 		}
 		
 		while(scan.hasNextLine()) {
-			commandString += scan.nextLine() + "%"; //Signifies Command endline
-		}
+			commands.add(scan.nextLine());
+		}		
 		
-		String [] commands = commandString.split("%");
-		// Can you see this?
-		System.out.println(commands);
+		for(String str: commands)
+			System.out.println(str);
+		
+		scan.close();
+		
+		//return new CritterSpecies(name, commands);
 		return null;
 	
 	}

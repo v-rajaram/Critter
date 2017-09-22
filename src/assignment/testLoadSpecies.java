@@ -29,19 +29,17 @@ public class testLoadSpecies {
 			}
 //			System.out.println(name);
 			
-			while(scan.hasNextLine()) {
-				if(scan.nextLine().equals("\n"))
+			while(scan.hasNextLine()) {				
+				String stored = scan.nextLine();
+				if(stored.equals(""))
 					break;
-				commandString += scan.nextLine() + "%"; //Signifies Command endline
+				commandString += stored + "%"; //Signifies Command endline
 			}
 			
 			String [] commands = commandString.split("%");
-
-			for(Object o: commands)
-				System.out.println(o);
-			while(scan.hasNextLine()) {
-				System.out.println(scan.nextLine());//Signifies Command endline
-			}
+			
+			
+			
 		}
 		finally {
 			user.close();
