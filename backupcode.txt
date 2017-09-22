@@ -2,8 +2,6 @@ package assignment;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
@@ -32,36 +30,85 @@ public class Interpreter implements CritterInterpreter {
 		Scanner scan = new Scanner(new FileReader("./species/" + fileName));
 		String commandString = "";
 		String name = "";
-		LinkedList<String> commands = new LinkedList <String>();
-		try {		
+		
+		try {
+			
 			
 			if(scan.hasNextLine()) {
 				name = scan.nextLine();
 			}
+//			System.out.println(name);
 			
 			while(scan.hasNextLine()) {				
 				String stored = scan.nextLine();
 				if(stored.equals(""))
 					break;
 				commandString += stored + "%"; //Signifies Command endline
-				//commands.add(stored);
 			}
 			
-			String[] splitted = commandString.split("%");
-			
-			for(String str: splitted)
-				System.out.println(str);
-			
-			//for(String str: commands)
-				//System.out.println(str);		
+			String [] commands = commandString.split("%");
+		
 		}
 		
 		finally {
 			scan.close();
 			
 		}
-		
-		return new CritterSpecies(name, commands);
 	}
 
 }
+
+
+
+
+
+package assignment;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class testLoadSpecies {
+	
+	
+	public static void main (String args[]) throws FileNotFoundException {
+		
+		
+		System.out.println("Enter in file pls");
+		Scanner user = new Scanner(System.in);
+		String fileName = user.nextLine();
+		Scanner scan = new Scanner(new FileReader("./species/" + fileName));
+		String commandString = "";
+		String name = "";
+		
+		try {
+			
+			
+			if(scan.hasNextLine()) {
+				name = scan.nextLine();
+			}
+//			System.out.println(name);
+			
+			while(scan.hasNextLine()) {				
+				String stored = scan.nextLine();
+				if(stored.equals(""))
+					break;
+				commandString += stored + "%"; //Signifies Command endline
+			}
+			
+			String [] commands = commandString.split("%");
+			
+			
+			
+		}
+		finally {
+			user.close();
+			scan.close();
+		}
+		
+	}
+	
+
+}
+

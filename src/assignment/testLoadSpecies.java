@@ -18,6 +18,7 @@ public class testLoadSpecies {
 		String commandString = "";
 		String name = "";
 		
+		
 		try {
 			
 			
