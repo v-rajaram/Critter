@@ -22,13 +22,17 @@ public class Interpreter implements CritterInterpreter {
 		ArrayList<String> commands = (ArrayList<String>) c.getCode();
 		
 		int numCommands = commands.size();
-		
+		for(String strng : commands) {
+			System.out.print(strng + " ");
+			System.out.println("");
+		}
 		
 		for(int i = 0; i < commands.size(); i++) {
 			String [] splitCommands = commands.get(i).split(" ");
 			for(String com : splitCommands) {
 				System.out.println(com);
 			}
+			System.out.println(splitCommands[0]);
 			switch (splitCommands[0]) {
 				case "hop": 
 					c.hop();
@@ -45,17 +49,17 @@ public class Interpreter implements CritterInterpreter {
 	            case "eat":  
 	            		c.eat();
 	            		break;
-//	            //case "go": 
-//	            		String goParam = splitCommands[1];
-//	            		if(goParam.charAt(0) == '+')
-//	            			c.setNextCodeLine(Integer.parseInt(goParam.substring(1)) + i);
-//	            		else if(goParam.charAt(0) == '-')
-//	            			c.setNextCodeLine(i - Integer.parseInt(goParam.substring(1)));
-//	            		else if(goParam.charAt(0) == 'r')
-//	            			c.setNextCodeLine(c.getReg(Integer.parseInt(goParam.substring(1))));
-//	            		else
-//	            			c.setNextCodeLine(Integer.parseInt(goParam.substring(1)));
-//	            		break;
+	            case "go": 
+	            		String goParam = splitCommands[1];
+	            		if(goParam.charAt(0) == '+')
+	            			c.setNextCodeLine(Integer.parseInt(goParam.substring(1)) + i);
+	            		else if(goParam.charAt(0) == '-')
+	            			c.setNextCodeLine(i - Integer.parseInt(goParam.substring(1)));
+	            		else if(goParam.charAt(0) == 'r')
+	            			c.setNextCodeLine(c.getReg(Integer.parseInt(goParam.substring(1))));
+	            		else
+	            			c.setNextCodeLine(Integer.parseInt(goParam.substring(1)));
+	            		break;
 	            case "ifrandom":
 	            		if(c.ifRandom()) {
 	            			int randomIndex = ThreadLocalRandom.current().nextInt(0, numCommands);
