@@ -1,0 +1,4 @@
+regTest
+write 1 0
+inc 1
+go 1

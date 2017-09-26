@@ -1,5 +1,5 @@
 Rover
-ifenemy 0 10
+ifwall 0 10
 ifempty 0 8
 ifrandom 6
 left

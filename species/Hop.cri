@@ -1,4 +1,7 @@
 Hop
+ifempty 0 4
+right
+go 1
 hop
 go 1
 
