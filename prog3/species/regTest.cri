@@ -1,0 +1,9 @@
+regTest
+write r1 6
+write r2 5
+write r3 7
+iflt r1 r2 8
+go 1
+hop
+go 1
+go -2

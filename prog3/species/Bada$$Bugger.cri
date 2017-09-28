@@ -1,0 +1,23 @@
+Bada$$Bugger
+ifenemy 0 10
+ifempty 0 8
+ifrandom 6
+left
+go 1
+right
+go 1
+hop
+go 1
+infect 12
+go 1
+ifrandom 1
+write r1 25
+write r2 0
+ifeq r1 r2 1
+ifenemy 0 20
+left
+dec r1
+go 15
+infect 12
+dec r1
+go 15

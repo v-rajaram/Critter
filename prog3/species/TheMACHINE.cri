@@ -1,0 +1,18 @@
+The MACHINE
+ifenemy 0 10
+ifempty 0 8
+ifrandom 6
+left
+go 1
+right
+go 1
+hop
+go 1
+infect 12
+go 1
+ifrandom 1
+ifenemy 0 16
+left
+go 13
+infect 12
+go 13
